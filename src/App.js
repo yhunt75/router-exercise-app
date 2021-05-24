@@ -6,8 +6,11 @@ import {
   Switch,
   useLocation,
 } from "react-router-dom";
+
 import UserProfile from "./UserProfile";
 import NoMatch from "./NoMatch";
+import PostList from './PostList';
+import User from './User';
 
 
 function Home() {
@@ -32,7 +35,7 @@ function App() {
           <About />
         </Route>
         <Route path="/users/:userId">
-          <UserProfile />
+          <User />
         </Route>
         <Route>
           <NoMatch />
