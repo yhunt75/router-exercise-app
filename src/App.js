@@ -6,6 +6,9 @@ import {
   Switch,
   useLocation,
 } from "react-router-dom";
+import UserProfile from "./UserProfile";
+import NoMatch from "./NoMatch";
+
 
 function Home() {
   return <p>Home</p>;
@@ -16,20 +19,25 @@ function About() {
 }
 
 function App() {
+
   return (
     <Router>
-      <div className="App">
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Switch>
-          <Route exact={true} path="/">
-            <Home />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-        </Switch>
-      </div>
+      <Link to="/">Home</Link>
+      <Link to="/about">About</Link>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/users/:userId">
+          <UserProfile />
+        </Route>
+        <Route>
+          <NoMatch />
+        </Route>
+      </Switch>
     </Router>
   );
 }

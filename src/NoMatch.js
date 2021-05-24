@@ -9,3 +9,5 @@ function NoMatch() {
     </h3>
   );
 }
+
+export default NoMatch;
