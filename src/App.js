@@ -26,6 +26,9 @@ function App() {
           <Route exact={true} path="/">
             <Home />
           </Route>
+          <Route path="/user/:userId">
+            <UserProfile />
+          </Route>
         </Switch>
       </div>
     </Router>
